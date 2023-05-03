@@ -1,0 +1,28 @@
+@import '../../../../scss/constants.scss';
+@import '../../../../scss/responsiveMixin.scss';
+.image_div {
+  .avatar {
+    transform: translate(-90%, -50%);
+    z-index: 2;
+  }
+  .avatar_border {
+    background-color: transparent;
+    border: 2px solid $primary-white-colour;
+    transform: translate(-80%, -40%);
+  }
+  .avatar,
+  .avatar_border {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    @include max-width(tablets) {
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -85%);
+      width: 25rem;
+      height: 25rem;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+
+.resume_wrapper {
+  width: 100vw;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include max-width(tablets) {
+    width: 100vw;
+    padding: 0;
+  }
+  .resume {
+    padding: 5rem 3rem;
+    width: 90%;
+    height: 90%;
+    background-color: $primary-background-colour;
+    @include max-width(tablets) {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+    p,
+    li {
+      font-size: 0.9rem;
+      color: $light-grey-font-color;
+      line-height: 1.4;
+      @include max-width(tablets) {
+        font-size: 1.5rem;
+      }
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: $primary-blue-colour;
+    }
+    h2 {
+      font-size: 2rem;
+      color: $primary-grey-colour;
+      @include max-width(tablets) {
+        font-size: 2rem;
+      }
+    }
+    h3 {
+      font-size: 1.1rem;
+      color: $light-grey-font-color;
+      @include max-width(tablets) {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      color: $light-grey-font-color;
+      li::before {
+        content: '■ ';
+      }
+    }
+    a {
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      width: fit-content;
+      &:active,
+      &:visited {
+        color: $primary-blue-colour;
+      }
+      @include max-width(tablets) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .green_shadow {
+      position: relative;
+      display: inline;
+      z-index: 1;
+      &::after {
+        content: '';
+        background: $primary-green-colour;
+        height: 0.4em;
+        width: 109%;
+        display: block;
+        margin-top: -0.6rem;
+        margin-left: -4%;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    .resume_left_grid {
+      .skills_and_contacts_wrapper {
+        padding-top: 1rem;
+        justify-content: flex-start;
+        @include max-width(tablets) {
+          padding-top: 3rem;
+        }
+        .contacts_wrapper {
+          @include max-width(tablets) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .linkedin_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            .linkedin_icon {
+              color: #0077b5;
+              cursor: pointer;
+            }
+          }
+        }
+        .skills_wrapper {
+          @include max-width(tablets) {
+            ul {
+              flex-direction: row;
+
+              flex-wrap: wrap;
+              li {
+                min-width: 30%;
+              }
+              li::before {
+                content: '■ ';
+              }
+            }
+          }
+        }
+      }
+    }
+    .resume_right_grid {
+      .resume_header {
+        letter-spacing: 0.1rem;
+        padding-bottom: 2rem;
+        border-bottom: 0.1rem solid $hr_colour;
+        .role {
+          margin-bottom: 3rem;
+        }
+      }
+      .section {
+        text-align: justify;
+        .section_heading {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: $primary-blue-colour;
+          @include max-width(tablets) {
+            font-size: 2rem;
+          }
+        }
+        .individual_exp_wrapper {
+          .section_company_name_role_heading {
+            h3 {
+              .company_name {
+                color: $primary-blue-colour;
+                font-weight: 600;
+              }
+            }
+            span {
+              color: $light-grey-font-color;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

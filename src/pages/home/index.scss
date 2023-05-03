@@ -1,0 +1,10 @@
+@import '../../scss/constants.scss';
+@import '../../scss/commonMixins.scss';
+@import '../../scss/responsiveMixin.scss';
+.homepage_container {
+  height: 100vh;
+  position: relative;
+  @include max-width(tablets) {
+    flex-direction: column;
+  }
+}

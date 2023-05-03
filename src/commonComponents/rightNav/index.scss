@@ -1,0 +1,77 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+.right_nav_wrapper {
+  display: flex;
+  width: 2rem;
+  flex-direction: column;
+  height: 10rem;
+  position: fixed;
+  right: 3rem;
+  top: 70vh;
+  z-index: 999;
+  align-items: center;
+  justify-content: space-around;
+  visibility: visible;
+  opacity: 1;
+  user-select: all;
+  transition: all 0.4s;
+
+  .nav_btn {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+
+    &::after {
+      box-sizing: border-box;
+      background-color: $primary-blue-colour;
+      position: absolute;
+      content: '';
+      width: 0.6rem;
+      height: 0.6rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      transform-origin: center;
+      transition: transform 0.6s, background-color 0.9s;
+    }
+  }
+  .opened::after {
+    box-sizing: border-box;
+    border: 1px solid $primary-blue-colour;
+    background-color: transparent;
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0) scale(1.7);
+    transition: transform 0.6s, background-color 0.9s;
+  }
+  @include max-width(tablets) {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+.green {
+  .nav_btn::after {
+    background-color: $primary-green-colour;
+  }
+  .opened::after {
+    background-color: transparent;
+    border: 1px solid $primary-green-colour;
+  }
+}
+.hidden {
+  .nav_btn::after {
+    background-color: $primary-purple-colour;
+  }
+  .opened::after {
+    background-color: transparent;
+    border: 1px solid $primary-purple-colour;
+  }
+  visibility: hidden;
+  opacity: 0;
+  user-select: none;
+}

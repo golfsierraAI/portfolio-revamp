@@ -1,0 +1,150 @@
+@import '../../scss/commonMixins.scss';
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+
+.projects_and_blogs_wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+
+  @include max-width(tablets) {
+    height: fit-content;
+    padding: 3rem;
+  }
+
+  .main_grid {
+    width: 80vw;
+    height: 70vh;
+    background-color: $primary_white_colour;
+
+    @include max-width(tablets) {
+      flex-direction: column;
+      min-height: 80vh;
+      width: 90vw;
+    }
+
+    & > div:nth-child(1) {
+      border-right: 0.15rem solid rgba(72, 49, 212, 0.3);
+
+      @include max-width(tablets) {
+        border: 0;
+      }
+    }
+
+    .inner_grid {
+      flex: 1;
+      height: 100%;
+      @include max-width(tablets) {
+        text-align: center;
+        height: fit-content;
+      }
+      h1 {
+        font-size: 3.6rem;
+        width: 80%;
+        font-weight: 700;
+        color: $primary_blue_colour;
+        @include max-width(tablets) {
+          font-size: 4rem;
+          width: 100%;
+        }
+      }
+
+      p {
+        font-size: 1.4rem;
+        color: $primary_purple_colour;
+
+        @include max-width(tablets) {
+          font-size: 2rem;
+        }
+      }
+
+      .inner_grid_wrapper {
+        height: 60%;
+
+        @include max-width(tablets) {
+          height: 50%;
+        }
+
+        & > div:nth-child(1) {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding-left: 5%;
+
+          @include max-width(tablets) {
+            padding: 0;
+          }
+        }
+
+        .button_wrapper {
+          height: 40%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 5%;
+
+          @include max-width(tablets) {
+            justify-content: center;
+          }
+
+          button {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            height: 40%;
+            width: 60%;
+            padding-left: 2rem;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 0.15rem solid rgba(72, 49, 212, 0.3);
+            outline: none;
+            color: $primary_blue_colour;
+            font-weight: 500;
+            z-index: 1;
+
+            @include max-width(tablets) {
+              font-size: 2rem;
+              width: 100%;
+              height: 70%;
+            }
+
+            &::after {
+              background: $primary_blue_colour;
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              height: 100%;
+              width: 0;
+              transition: all 0.5s;
+            }
+
+            &:hover::after {
+              width: 100%;
+            }
+
+            svg {
+              width: 2rem;
+
+              fill: $primary_blue_colour;
+            }
+
+            &:hover {
+              color: white;
+              border: 0.15rem solid $primary_blue_colour;
+              svg {
+                fill: $primary_white_colour;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

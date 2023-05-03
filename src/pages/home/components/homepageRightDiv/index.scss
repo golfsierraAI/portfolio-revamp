@@ -1,0 +1,11 @@
+@import '../../../../scss/constants.scss';
+@import '../../../../scss/responsiveMixin.scss';
+@import '../../../../scss/commonMixins.scss';
+.homepage_container_right_div {
+  @include default-padding-on-top;
+  background-color: $primary-green-colour;
+  flex: 1;
+  @include max-width(tablets) {
+    padding-top: 0;
+  }
+}

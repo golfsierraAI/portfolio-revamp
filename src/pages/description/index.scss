@@ -1,0 +1,67 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+
+.desc_wrapper {
+  height: 100vh;
+  padding: 9rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $primary_white_colour;
+
+  @include max-width(tablets) {
+    height: fit-content;
+    align-items: center;
+    padding: 3rem;
+  }
+  .main_grid {
+    width: 80%;
+    height: 75vh;
+    display: flex;
+    @include max-width(tablets) {
+      width: 100%;
+      height: fit-content;
+      gap: 30px;
+    }
+    h1 {
+      font-size: 4.1rem;
+      font-weight: 800;
+      color: $primary-blue-colour;
+      @include max-width(tablets) {
+        font-size: 5rem;
+      }
+    }
+    p {
+      line-height: 1.6;
+      text-align: justify;
+      color: $primary-purple-colour;
+      @include max-width(tablets) {
+        font-size: 1.8rem;
+      }
+    }
+    .upper_grid,
+    .lower_grid {
+      .text_grid {
+        height: 100%;
+        padding: 1rem 0;
+        @include max-width(tablets) {
+          height: fit-content;
+          text-align: center;
+        }
+      }
+      .image_grid {
+        height: 100%;
+        .lottie_2 {
+          height: 90%;
+        }
+        .lottie_1 {
+          width: 50%;
+        }
+
+        @include max-width(tablets) {
+          height: 40vw;
+        }
+      }
+    }
+  }
+}

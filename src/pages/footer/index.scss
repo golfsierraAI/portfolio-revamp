@@ -1,0 +1,63 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+.footer_wrapper {
+  height: 100vh;
+  background-color: $primary_purple_colour;
+  padding: 15rem 3rem 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include max-width(tablets) {
+    height: fit-content;
+  }
+
+  .upper_grid {
+    height: 30vh;
+    @include max-width(tablets) {
+      height: fit-content;
+      gap: 20px;
+      flex-direction: column;
+      padding-bottom: 10rem;
+    }
+    .upper_left_grid,
+    .upper_right_grid {
+      height: 100%;
+      width: 20vw;
+      @include max-width(tablets) {
+        height: fit-content;
+        width: 100%;
+        gap: 3rem;
+      }
+      h1 {
+        color: $primary_white_colour;
+        font-size: 2rem;
+
+        @include max-width(tablets) {
+          font-size: 2rem;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $primary_green_colour;
+        font-size: 1.1rem;
+        @include max-width(tablets) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .lower_grid {
+    height: 10vh;
+    color: $primary_green_colour;
+    font-size: 1.2rem;
+    align-items: flex-end;
+    border-top: 1px solid $primary_green_colour;
+
+    @include max-width(tablets) {
+      height: fit-content;
+      padding-top: 5rem;
+      font-size: 1.6rem;
+    }
+  }
+}

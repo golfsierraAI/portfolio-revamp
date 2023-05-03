@@ -1,0 +1,37 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+.shelf_wrapper {
+  background-color: $primary-background-colour;
+  padding-top: 12rem;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  @include max-width(tablets) {
+    padding-top: 50px;
+  }
+  .main_grid_blog_list {
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $primary-grey-colour;
+      @include max-width(tablets) {
+        font-size: 4rem;
+      }
+      span {
+        opacity: 0.7;
+        font-weight: 800;
+        letter-spacing: 4px;
+      }
+    }
+  }
+  .items_grid_blog_list {
+    width: 50%;
+    @include max-width(tablets) {
+      width: 90%;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+
+.experience_wrapper {
+  height: 100vh;
+  @include max-width(tablets) {
+    height: fit-content;
+  }
+  background-color: $primary-blue-colour;
+  .left_grid {
+    height: 100vh;
+    padding: 6rem 10rem 0 11rem;
+    gap: 20px;
+    @include max-width(tablets) {
+      text-align: center;
+      height: fit-content;
+      padding: 6rem 3rem 0 3rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: $primary-green-colour;
+      letter-spacing: 2px;
+      @include max-width(tablets) {
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
+    p {
+      color: $primary-white-colour;
+      line-height: 1.2;
+      text-align: justify;
+      @include max-width(tablets) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .right_grid {
+    height: 100vh;
+    padding: 4rem;
+    @include max-width(tablets) {
+      height: fit-content;
+      justify-content: center;
+      padding: 30px 0;
+    }
+  }
+
+  img {
+    transform: scale(0.9);
+    @include max-width(tablets) {
+      width: 80%;
+    }
+  }
+}

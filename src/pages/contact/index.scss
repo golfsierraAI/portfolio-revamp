@@ -1,0 +1,138 @@
+@import '../../scss/constants.scss';
+@import '../../scss/responsiveMixin.scss';
+
+.contact_wrapper {
+  height: 100vh;
+  padding: 6rem 0;
+  @include max-width(tablets) {
+    height: fit-content;
+  }
+
+  .upper_grid {
+    @include max-width(tablets) {
+      gap: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: $primary_blue_colour;
+      width: 40vw;
+      letter-spacing: 1.5px;
+      @include max-width(tablets) {
+        width: 100%;
+      }
+    }
+    p {
+      width: 35vw;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: $primary_purple_colour;
+      text-align: center;
+      @include max-width(tablets) {
+        width: 80%;
+      }
+    }
+  }
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form_grid {
+    width: 50vw;
+    @include max-width(tablets) {
+      width: 80%;
+    }
+    .form_grid_upper_grid,
+    .form_grid_lower_grid {
+      @include max-width(tablets) {
+        flex-direction: column;
+      }
+      .input_wrapper {
+        flex: 1;
+        @include max-width(tablets) {
+          gap: 1rem;
+        }
+        label {
+          width: 100%;
+          color: rgba(61, 21, 95, 0.5);
+          @include max-width(tablets) {
+            font-size: 2rem;
+          }
+        }
+        input,
+        textarea {
+          width: 100%;
+          font-size: 1.1rem;
+          padding: 1rem 1rem;
+          outline: none;
+          resize: none;
+          border: 1px solid rgba(61, 21, 95, 0.5);
+          color: rgba(61, 21, 95, 0.5);
+          @include max-width(tablets) {
+            font-size: 1.5rem;
+          }
+          &::placeholder {
+            color: rgba(61, 21, 95, 0.5);
+          }
+        }
+      }
+    }
+    .form_grid_button_grid {
+      button {
+        position: relative;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        width: 18rem;
+        height: 4rem;
+        padding-left: 2rem;
+        font-size: 1.4rem;
+        background-color: transparent;
+        border: 0.15rem solid rgba(72, 49, 212, 0.3);
+        outline: none;
+        color: $primary_blue_colour;
+        font-weight: 500;
+        z-index: 1;
+
+        @include max-width(tablets) {
+          font-size: 2rem;
+          width: 100%;
+          height: 6rem;
+        }
+
+        &::after {
+          background: $primary_blue_colour;
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          height: 100%;
+          width: 0;
+          transition: all 0.5s;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        svg {
+          width: 2rem;
+
+          fill: $primary_blue_colour;
+        }
+
+        &:hover {
+          color: white;
+          border: 0.15rem solid $primary_blue_colour;
+          svg {
+            fill: $primary_white_colour;
+          }
+        }
+      }
+    }
+  }
+}

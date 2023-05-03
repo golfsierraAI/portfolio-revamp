@@ -1,0 +1,62 @@
+@import '../../../../scss/constants.scss';
+@import '../../../../scss/commonMixins.scss';
+@import '../../../../scss/responsiveMixin.scss';
+.homepage_container_left_div {
+  @include default-padding-on-top;
+  background-color: $primary-blue-colour;
+  flex: 2;
+  padding: 10rem 0 0 11rem;
+  @include max-width(tablets) {
+    height: fit-content;
+    padding: 5rem 3rem;
+    flex: 1;
+  }
+
+  .text_wrapper {
+    width: 40rem;
+    @include max-width(tablets) {
+      padding: 2rem 1rem;
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+  .role {
+    color: $primary-green-colour;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    @include max-width(tablets) {
+      font-size: 5rem;
+      color: $primary-green-colour;
+    }
+  }
+  .desc {
+    color: $primary-white-colour;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.5;
+    @include max-width(tablets) {
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+  .praise_wrapper {
+    width: 50rem;
+    .praise {
+      font-weight: 400;
+      width: 30%;
+      line-height: 1.5;
+      box-sizing: border-box;
+      color: $primary-white-colour;
+      @include max-width(tablets) {
+        width: 40%;
+        padding: 0 0 0 2rem;
+      }
+    }
+    @include max-width(tablets) {
+      width: 100%;
+      font-size: 1.4rem;
+    }
+  }
+}
