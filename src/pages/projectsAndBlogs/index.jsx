@@ -1,8 +1,12 @@
 import { Grid } from '@mui/material';
 import './index.scss';
 import Arrow from '../../assets/Arrow';
+import { useNavigate } from 'react-router-dom';
 function ProjectsAndBlogsPage() {
-  const redirect = () => {};
+  const navigate = useNavigate();
+  const redirect = (path) => {
+    navigate(path);
+  };
   return (
     <div id="projects" className="projects_and_blogs_wrapper">
       <Grid
@@ -22,7 +26,7 @@ function ProjectsAndBlogsPage() {
               </p>
             </div>
             <div className="button_wrapper">
-              <button onClick={() => redirect('projects')}>
+              <button onClick={() => redirect('/work')}>
                 See my work <Arrow />
               </button>
             </div>
@@ -38,7 +42,7 @@ function ProjectsAndBlogsPage() {
               </p>
             </div>
             <div className="button_wrapper">
-              <button onClick={() => redirect('blog')}>
+              <button onClick={() => redirect('/shelf')}>
                 Read my articles <Arrow />
               </button>
             </div>

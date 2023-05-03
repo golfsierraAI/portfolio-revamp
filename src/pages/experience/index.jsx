@@ -21,24 +21,24 @@ function Experience() {
         lg={6}>
         <h1>Over the years,</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae nulla
-          repudiandae, veritatis, quia quibusdam ratione sit iste, sequi architecto minima natus
-          nobis consequuntur neque? Explicabo corrupti voluptates veniam impedit?
+          As a Frontend developer, I have gained valuable experience and developed my skills in
+          React, a popular JavaScript library for building user interfaces. I have worked on a
+          variety of projects, from small-scale websites to large, complex applications, and have
+          consistently delivered high-quality products using best practices to optimize performance.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae nulla
-          repudiandae, veritatis, quia quibusdam ratione sit iste, sequi architecto minima natus
-          nobis consequuntur neque? Explicabo corrupti voluptates veniam impedit?
+          In terms of technical skills, I am well-versed in modern front-end development workflows
+          and tools, including Webpack, Babel, and ESLint. I have deep experience with React and
+          related libraries and tools, such as Redux, React Router, and Styled Components.
+          Additionally, I remain committed to staying up-to-date with the latest trends and best
+          practices in the industry by reading industry publications and implementing them in
+          various personal projects.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae nulla
-          repudiandae, veritatis, quia quibusdam ratione sit iste, sequi architecto minima natus
-          nobis consequuntur neque? Explicabo corrupti voluptates veniam impedit?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos vitae nulla
-          repudiandae, veritatis, quia quibusdam ratione sit iste, sequi architecto minima natus
-          nobis consequuntur neque? Explicabo corrupti voluptates veniam impedit?
+          Looking forward, I am excited to continue building on this foundation and taking on new
+          challenges in the future. My skills and experience make me a valuable asset to any
+          development team, and I am confident in my ability to deliver high-quality products and
+          collaborate effectively with others.
         </p>
       </Grid>
       <Grid

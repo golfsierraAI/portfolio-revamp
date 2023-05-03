@@ -11,7 +11,6 @@ function Header({ currentElement, currentScreen }) {
     e.preventDefault();
   }, []);
   React.useEffect(() => {
-    console.log(clickedState);
     if (window.innerWidth < 900) {
       if (clickedState) {
         window.addEventListener('wheel', scrollListener, { passive: false });

@@ -60,11 +60,15 @@
         content: '■ ';
       }
     }
+    h6,
     a {
       font-weight: 600;
       font-size: 1rem;
+      padding: 0;
       text-decoration: none;
       width: fit-content;
+      cursor: pointer;
+      color: $primary-blue-colour;
       &:active,
       &:visited {
         color: $primary-blue-colour;
@@ -104,7 +108,7 @@
             flex-wrap: wrap;
             justify-content: center;
           }
-          .linkedin_wrapper {
+          .icon_wrapper {
             display: flex;
             align-items: center;
             gap: 0.3rem;
@@ -112,6 +116,11 @@
             .linkedin_icon {
               color: #0077b5;
               cursor: pointer;
+              margin-left: -4px;
+            }
+            .location_icon {
+              color: $primary-blue-colour;
+              margin-left: -7px;
             }
           }
         }

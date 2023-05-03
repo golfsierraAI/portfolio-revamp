@@ -2,7 +2,6 @@ import { Grid } from '@mui/material';
 import Arrow from '../../assets/Arrow';
 import './index.scss';
 function ContactPage() {
-  console.log(process.env.REACT_APP_EMAIL_SECRET);
   return (
     <div id="contact" className="contact_wrapper">
       <Grid

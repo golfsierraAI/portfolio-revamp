@@ -1,11 +1,14 @@
 import { Grid } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import './index.scss';
 import { useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 function Resume() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
 
   const apiData = {
     name: 'Gourav sharma',
@@ -91,14 +94,16 @@ function Resume() {
     return (
       <Grid className="skills_and_contacts_wrapper" direction="column" container item gap={5}>
         <Grid className="contacts_wrapper" direction="column" container item gap={2}>
-          <a className="green_shadow" href={data.portfolioLink}>
+          <h6 className="green_shadow" onClick={() => navigate(data.portfolioLink)}>
             gourav.sharma
-          </a>
-          <p>{data.location}</p>
+          </h6>
+          <p className="icon_wrapper">
+            <LocationOnIcon className="location_icon" /> {data.location}
+          </p>
           <a className="green_shadow" href="mailto:gourav.npm@gmail.com">
             {data.email}
           </a>
-          <a className="linkedin_wrapper" href={data.linkedInURL} target="_blank" rel="noreferrer">
+          <a className="icon_wrapper" href={data.linkedInURL} target="_blank" rel="noreferrer">
             <LinkedInIcon className="linkedin_icon" /> golfSierra
           </a>
         </Grid>
