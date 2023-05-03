@@ -5,7 +5,9 @@ import './index.scss';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getResumeData } from './services';
+import Loader from '../../commonComponents/loader';
 function Resume() {
+  const [isLoading, setIsLoading] = useState(false);
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -14,10 +16,11 @@ function Resume() {
   const [apiData, setApiData] = useState(null);
 
   const populateApiData = async () => {
+    setIsLoading(true);
     const response = await getResumeData();
     const data = await response.json();
     setApiData(data);
-    console.log(data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -118,6 +121,6 @@ function Resume() {
       </div>
     );
   };
-  return apiData ? renderContentFromData(apiData) : null;
+  return isLoading ? <Loader /> : renderContentFromData(apiData);
 }
 export default Resume;
