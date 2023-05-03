@@ -16,11 +16,9 @@ function HomepageLeftDiv() {
         className="text_wrapper">
         <h1 className="role">Frontend Developer.</h1>
         <h2 className="desc">
-          My passion lies in developing robust and adaptable frontend solutions that prioritize
-          exceptional user experiences.
-          {/* I'm a Software Engineer who has a passion of building (and occasionally designing)
+          I'm a Software Engineer who has a passion of building (and occasionally designing)
           exceptional digital experiences. Currently, I'm an engineer at United Health Group focused
-          on building accessible, human-centered products. */}
+          on building accessible, human-centered products.
         </h2>
       </Grid>
       <Grid container className="praise_wrapper" justifyContent="space-between" alignItems="center">
@@ -38,9 +36,7 @@ function HomepageLeftDiv() {
           direction="column"
           justifyContent="center"
           alignItems="center">
-          <h1>
-            Over a decade of experience building products for clients across several countries.
-          </h1>
+          <h1>Extensive experience in building products for clients across several countries.</h1>
         </Grid>
       </Grid>
     </Grid>

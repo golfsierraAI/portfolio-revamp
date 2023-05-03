@@ -1,7 +1,12 @@
 import { Grid } from '@mui/material';
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const redirect = (path) => {
+    navigate(path);
+  };
   return (
     <div id="footer" className="footer_wrapper">
       <Grid
@@ -33,9 +38,9 @@ const Footer = () => {
           alignItems="flex-start"
           gap={4}
           justifyContent="flex-end">
-          <a href="mailto:gourav.npm@gmail.com">My Work</a>
-          <a href="https://t.me/golfSierra99">My Résumé</a>
-          <a href="https://t.me/golfSierra99">My Shelf</a>
+          <h5 onClick={() => redirect('/work')}>My Work</h5>
+          <h5 onClick={() => redirect('/résumé')}>My Résumé</h5>
+          <h5 onClick={() => redirect('/shelf')}>My Shelf</h5>
         </Grid>
       </Grid>
 

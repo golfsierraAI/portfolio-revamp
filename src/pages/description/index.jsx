@@ -45,9 +45,9 @@ function DescriptionPage() {
             container>
             <h1>Backend</h1>
             <p>
-              As an experienced backend engineer proficient in Java and Spring Boot, I have a proven
-              track record of designing and developing scalable backend systems. I am skilled in
-              writing optimized code, implementing best practices, and troubleshooting issues. My
+              As an experienced backend engineer proficient in Java (SpringBoot) and Node, I have a
+              proven track record of designing and developing scalable backend systems. I am skilled
+              in writing optimized code, implementing best practices, and troubleshooting issues. My
               collaborative approach, technical expertise, and dedication to quality make me a
               valuable asset to any project.
             </p>

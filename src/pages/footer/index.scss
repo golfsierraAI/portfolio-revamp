@@ -37,8 +37,10 @@
           font-size: 2rem;
         }
       }
-      a {
+      a,
+      h5 {
         text-decoration: none;
+        cursor: pointer;
         color: $primary_green_colour;
         font-size: 1.1rem;
         @include max-width(tablets) {
