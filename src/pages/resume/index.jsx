@@ -7,13 +7,18 @@ import { useNavigate } from 'react-router-dom';
 import { getResumeData } from './services';
 import Loader from '../../commonComponents/loader';
 function Resume() {
-  const [isLoading, setIsLoading] = useState(false);
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   const [apiData, setApiData] = useState(null);
+
+  useEffect(() => {
+    populateApiData();
+  }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const populateApiData = async () => {
     setIsLoading(true);
@@ -22,10 +27,6 @@ function Resume() {
     setApiData(data);
     setIsLoading(false);
   };
-
-  useEffect(() => {
-    populateApiData();
-  }, []);
 
   const renderSkillsAndContact = (data) => {
     return (

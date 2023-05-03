@@ -8,7 +8,7 @@ import Loader from '../../commonComponents/loader';
 
 function Shelf() {
   const [apiData, setApiData] = React.useState(undefined);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     populateData();
