@@ -2,93 +2,27 @@ import { Grid } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import './index.scss';
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getResumeData } from './services';
 function Resume() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const navigate = useNavigate();
 
-  const apiData = {
-    name: 'Gourav sharma',
-    resumeHeadingSection: {
-      role: 'Expert Frontend Developer',
-      description:
-        'Detail-oriented Front End Developer with more than 1 year of development experience working with HTML, CSS, Javascript, React.js, and TypeScript. Highly adept at both independent and collaborative projects, with an emphasis on mobile-first website development.',
-    },
-    contactAndSkills: {
-      portfolioLink: '/',
-      location: 'New Delhi, India',
-      email: 'gourav.npm@gmail.com',
-      linkedInURL: 'https://www.linkedin.com/in/golfSierra/',
-      skills: [
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'SCSS',
-        'TypeScript',
-        'React.js',
-        'Redux',
-        'Redux-saga',
-        'Redux-thunk',
-        'Material UI',
-        'React-router',
-        'Angular',
-        'Node.js',
-        'Java',
-        'Springboot',
-        'MySQL',
-        'MongoDB',
-        'Git ',
-        'Amazon Lambda',
-      ],
-    },
-    experienceSection: {
-      description:
-        "I've worked on a handful of web projects over the years, some of which were for the following organizations:",
+  const [apiData, setApiData] = useState(null);
 
-      organisationList: [
-        {
-          companyName: 'Optum, United health group',
-          description:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum corrupti nemo odio iure fugit non veritatis tenetur eius totam deleniti libero voluptatem tempora cumque ut, praesentium sed quod ab pariatur!',
-          duration: 'Jan 2023 - Present',
-          role: 'Associate Software Engineer 2',
-          bulletPoints: [
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-          ],
-        },
-        {
-          companyName: 'Highradius',
-          description:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum corrupti nemo odio iure fugit non veritatis tenetur eius totam deleniti libero voluptatem tempora cumque ut, praesentium sed quod ab pariatur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum corrupti nemo odio iure fugit non veritatis tenetur eius totam deleniti libero voluptatem tempora cumque ut, praesentium sed quod ab pariatur!',
-          role: 'Associate Software Engineer 1, Software Developer Intern',
-          duration: 'Dec 2020 - September 2022',
-          bulletPoints: [
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente adipisci quos ducimus possimus alias. Sit culpa similique voluptas voluptatum aut voluptate eaque quos a doloribus. Reiciendis quasi itaque labore ea?',
-          ],
-        },
-      ],
-    },
-
-    projectSection: {
-      description:
-        'Links to some of my work can be found on <link>gouravsharma.netlify.app/work</link> and details can be provided upon request via a scheduled demo call.',
-    },
+  const populateApiData = async () => {
+    const response = await getResumeData();
+    const data = await response.json();
+    setApiData(data);
+    console.log(data);
   };
+
+  useEffect(() => {
+    populateApiData();
+  }, []);
 
   const renderSkillsAndContact = (data) => {
     return (
@@ -184,6 +118,6 @@ function Resume() {
       </div>
     );
   };
-  return renderContentFromData(apiData);
+  return apiData ? renderContentFromData(apiData) : null;
 }
 export default Resume;
