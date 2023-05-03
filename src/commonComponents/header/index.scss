@@ -6,7 +6,7 @@
   position: fixed;
   z-index: 999;
   @include max-width(tablets) {
-    position: static;
+    position: sticky;
     background-color: $primary-blue-colour;
     overflow: hidden;
   }
