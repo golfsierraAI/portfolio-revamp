@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect } from 'react';
 import './app.scss';
-import { debounce, smoothScroll } from './helpers/helper';
+import { smoothScroll, throttle } from './helpers/helper';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import HomePage from './pages/home';
 
 function App() {
   const [currentElement, setCurrentElement] = React.useState('home');
+
   const [arr] = React.useState(['home', 'desc', 'experience', 'projects', 'contact', 'footer']);
 
   function scroll(event) {
@@ -37,7 +38,7 @@ function App() {
     return event.deltaY < 0;
   }
 
-  const manageScroll = debounce((event) => scroll(event));
+  const manageScroll = throttle((event) => scroll(event));
 
   const handleScroll = useCallback(
     (e) => {

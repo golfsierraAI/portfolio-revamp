@@ -1,9 +1,8 @@
-export function smoothScroll(scrollTargetY, speed = 2500) {
+export function smoothScroll(scrollTargetY, speed = 1000) {
   let currentTime = 0;
   const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-  const time = Math.abs(scrollY - scrollTargetY) / speed
-  
+  const time = Math.abs(scrollY - scrollTargetY) / speed;
 
   const easeInOutCubic = (pos) => {
     if ((pos /= 0.5) < 1) return 0.5 * Math.pow(pos, 3);
@@ -27,14 +26,15 @@ export function smoothScroll(scrollTargetY, speed = 2500) {
   runAnimation();
 }
 
-export function debounce(func, timeout = 200) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
+export function throttle(fn, wait = 600) {
+  let time = Date.now();
+
+  return function (event) {
+    if (Math.abs(event.deltaY) < 4) return;
+
+    if (time + wait - Date.now() < 0) {
+      fn(event);
+      time = Date.now();
+    }
   };
 }
-
-

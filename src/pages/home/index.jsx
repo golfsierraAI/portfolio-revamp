@@ -11,7 +11,11 @@ import Footer from '../footer';
 import Header from '../../commonComponents/header';
 
 import RightNav from '../../commonComponents/rightNav';
+import { useLayoutEffect } from 'react';
 function HomePage({ currentElement, setCurrentElement }) {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header currentElement={currentElement} currentScreen={'main'} />

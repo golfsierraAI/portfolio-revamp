@@ -61,6 +61,7 @@ function ContactPage() {
                 <textarea
                   name="message"
                   required={true}
+                  minLength={30}
                   rows="4"
                   cols="50"
                   placeholder="Your Message"
