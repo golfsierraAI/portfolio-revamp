@@ -6,8 +6,10 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getResumeData } from './services';
 import Loader from '../../commonComponents/loader';
+import InternalServerError from '../../commonComponents/serverError';
 function Resume() {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasErrorOccured, setHasErrorOccured] = useState('');
   const navigate = useNavigate();
 
   const [apiData, setApiData] = useState(null);
@@ -22,10 +24,15 @@ function Resume() {
 
   const populateApiData = async () => {
     setIsLoading(true);
-    const response = await getResumeData();
-    const data = await response.json();
-    setApiData(data);
-    setIsLoading(false);
+    try {
+      const response = await getResumeData();
+      const data = await response.json();
+      setApiData(data);
+    } catch (err) {
+      setHasErrorOccured(err.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const renderSkillsAndContact = (data) => {
@@ -122,6 +129,12 @@ function Resume() {
       </div>
     );
   };
-  return isLoading ? <Loader /> : renderContentFromData(apiData);
+  return isLoading ? (
+    <Loader />
+  ) : hasErrorOccured ? (
+    <InternalServerError />
+  ) : (
+    renderContentFromData(apiData)
+  );
 }
 export default Resume;

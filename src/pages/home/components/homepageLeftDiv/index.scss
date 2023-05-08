@@ -5,7 +5,7 @@
   @include default-padding-on-top;
   background-color: $primary-blue-colour;
   flex: 2;
-  padding: 10rem 0 0 11rem;
+  padding: 10rem 0 0 4rem;
   @include max-width(tablets) {
     height: fit-content;
     padding: 5rem 3rem;
@@ -15,7 +15,7 @@
   .text_wrapper {
     width: 40rem;
     @include max-width(tablets) {
-      padding: 2rem 1rem;
+      padding: 2rem 0rem;
       width: 100%;
       padding-top: 0;
     }
@@ -42,7 +42,7 @@
     }
   }
   .praise_wrapper {
-    width: 50rem;
+    width: 40rem;
     .praise {
       font-weight: 400;
       width: 30%;
@@ -51,7 +51,6 @@
       color: $primary-white-colour;
       @include max-width(tablets) {
         width: 40%;
-        padding: 0 0 0 2rem;
       }
     }
     @include max-width(tablets) {

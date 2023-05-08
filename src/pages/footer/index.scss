@@ -10,6 +10,7 @@
 
   @include max-width(tablets) {
     height: fit-content;
+    padding: 10rem 3rem;
   }
 
   .upper_grid {
@@ -34,7 +35,7 @@
         font-size: 2rem;
 
         @include max-width(tablets) {
-          font-size: 2rem;
+          font-size: 4rem;
         }
       }
       a,

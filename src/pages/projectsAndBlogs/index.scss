@@ -41,12 +41,11 @@
         height: fit-content;
       }
       h1 {
-        font-size: 3.6rem;
+        font-size: 4rem;
         width: 80%;
         font-weight: 700;
         color: $primary_blue_colour;
         @include max-width(tablets) {
-          font-size: 4rem;
           width: 100%;
         }
       }

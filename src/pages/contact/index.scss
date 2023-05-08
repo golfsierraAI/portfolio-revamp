@@ -20,6 +20,7 @@
       width: 40vw;
       letter-spacing: 1.5px;
       @include max-width(tablets) {
+        font-size: 3.5rem;
         width: 100%;
       }
     }
@@ -30,6 +31,7 @@
       color: $primary_purple_colour;
       text-align: center;
       @include max-width(tablets) {
+        font-size: 2rem;
         width: 80%;
       }
     }

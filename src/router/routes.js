@@ -1,6 +1,6 @@
 import React from 'react';
 import {  createBrowserRouter } from 'react-router-dom';
-import NotFound from '../pages/notFound';
+import NotFound from '../commonComponents/notFound';
 import Resume from '../pages/resume';
 import Shelf from '../pages/shelf';
 import Work from '../pages/work';
