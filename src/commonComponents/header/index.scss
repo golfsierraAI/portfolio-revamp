@@ -168,7 +168,7 @@
 .header_button.x {
   &::before {
     transition: 0.2s ease;
-    transform: rotate(45deg) translate(0.5rem, 0.7rem);
+    transform: rotate(45deg) translate(0.6rem, 0.6rem);
     @include max-width(tablets) {
       background-color: $primary-blue-colour;
     }
@@ -176,7 +176,7 @@
   &::after {
     width: 100%;
     transition: 0.2s ease;
-    transform: rotate(-45deg) translate(-0.2rem, -0.1rem);
+    transform: rotate(-45deg);
     @include max-width(tablets) {
       background-color: $primary-blue-colour;
     }
