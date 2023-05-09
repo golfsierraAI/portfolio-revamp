@@ -43,13 +43,14 @@ function Resume() {
             gourav.sharma
           </h6>
           <p className="icon_wrapper">
-            <LocationOnIcon className="location_icon" /> {data.location}
+            <LocationOnIcon className="location_icon" /> <span>{data.location}</span>
           </p>
           <a className="green_shadow" href="mailto:gourav.npm@gmail.com">
             {data.email}
           </a>
           <a className="icon_wrapper" href={data.linkedInURL} target="_blank" rel="noreferrer">
-            <LinkedInIcon className="linkedin_icon" /> golfSierra
+            <LinkedInIcon className="linkedin_icon" />
+            <span>golfSierra</span>
           </a>
         </Grid>
         <Grid className="skills_wrapper" direction="column" container item gap={2}>
@@ -108,7 +109,7 @@ function Resume() {
             item
             flex={3}
             gap={4}>
-            <Grid className="resume_header" container gap={2} flexDirection="column">
+            <Grid className="resume_header" container gap={1} flexDirection="column">
               <h1>{data.name}</h1>
               <h2 className="role">{data.resumeHeadingSection.role}</h2>
               <p>{data.resumeHeadingSection.description}</p>

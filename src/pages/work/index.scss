@@ -1,0 +1,29 @@
+@import '../../scss/constants.scss';
+.work_wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  padding: 3rem 4rem;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 2rem;
+
+    text-align: justify;
+    color: $light-grey-font-color;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+  .button {
+    background-color: $primary-blue-colour;
+    outline: none;
+    border: none;
+    width: 30rem;
+    height: 5rem;
+    font-size: 2rem;
+    color: $primary-white-colour;
+  }
+}

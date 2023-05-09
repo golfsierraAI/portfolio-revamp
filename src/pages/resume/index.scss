@@ -26,7 +26,7 @@
       color: $light-grey-font-color;
       line-height: 1.4;
       @include max-width(tablets) {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
     }
     h1 {
@@ -38,14 +38,14 @@
       font-size: 2rem;
       color: $primary-grey-colour;
       @include max-width(tablets) {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
     h3 {
       font-size: 1.1rem;
       color: $light-grey-font-color;
       @include max-width(tablets) {
-        font-size: 1.5rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
       }
     }
@@ -113,13 +113,18 @@
             align-items: center;
             gap: 0.3rem;
             font-size: 0.9rem;
+            @include max-width(tablets) {
+              font-size: 1.5rem;
+            }
             .linkedin_icon {
               color: #0077b5;
               cursor: pointer;
+              margin: 0;
               margin-left: -4px;
             }
             .location_icon {
               color: $primary-blue-colour;
+              margin: 0;
               margin-left: -7px;
             }
           }
@@ -157,7 +162,7 @@
           font-weight: 600;
           color: $primary-blue-colour;
           @include max-width(tablets) {
-            font-size: 2rem;
+            font-size: 2.5rem;
           }
         }
         .individual_exp_wrapper {
