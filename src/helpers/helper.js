@@ -30,7 +30,7 @@ export function throttle(fn, wait = 600) {
   let time = Date.now();
 
   return function (event) {
-    if (Math.abs(event.deltaY) < 4) return;
+    if (Math.abs(event.deltaY) < 5) return;
 
     if (time + wait - Date.now() < 0) {
       fn(event);
@@ -38,3 +38,14 @@ export function throttle(fn, wait = 600) {
     }
   };
 }
+
+ export function debounce(func, timeout = 500) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+

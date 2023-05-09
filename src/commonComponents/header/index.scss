@@ -52,8 +52,8 @@
 .header_contact_menu {
   top: 2rem;
   right: 2rem;
-  width: 18rem;
-  height: 26rem;
+  width: 22rem;
+  height: 30rem;
   background-color: $primary-white-colour;
   position: absolute;
   box-shadow: 0 10px 53px 0 rgb(163 204 170 / 30%);
@@ -81,7 +81,7 @@
       outline: none;
       cursor: pointer;
       padding: 10px 50px;
-      font-size: 1rem;
+      font-size: 1.3rem;
       color: $primary-purple-colour;
       text-align: left;
       @include max-width(tablets) {
@@ -136,13 +136,13 @@
   &::before {
     content: '';
     width: 100%;
-    top: 0.2rem;
+    top: 1rem;
   }
 
   &::after {
     content: '';
     width: 80%;
-    top: 1rem;
+    top: 2rem;
   }
   @include max-width(tablets) {
     scale: 0.8;

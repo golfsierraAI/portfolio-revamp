@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import './app.scss';
-import { smoothScroll, throttle } from './helpers/helper';
+import { debounce, smoothScroll, throttle } from './helpers/helper';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import HomePage from './pages/home';
@@ -14,24 +14,32 @@ function App() {
     const currIndex = arr.indexOf(currentElement);
     let element = null;
     let elementName = '';
-    if (checkScrollDirectionIsUp(event)) {
+    let scrollingUp = checkScrollDirectionIsUp(event);
+    if (scrollingUp) {
       if (currIndex === 0) {
         return;
       }
       elementName = arr[currIndex - 1];
     } else {
-      if (currIndex === arr.length - 1) {
+      if (currIndex === arr.length - 1 || scrollingUp === undefined) {
         return;
       }
       elementName = arr[currIndex + 1];
     }
-
     setCurrentElement(elementName);
     element = document.getElementById(elementName);
     smoothScroll(element.offsetTop);
   }
 
   function checkScrollDirectionIsUp(event) {
+    if (event.type === 'keydown') {
+      if (event.key === 'ArrowUp') {
+        return true;
+      } else if (event.key === 'ArrowDown') {
+        return false;
+      }
+      return undefined;
+    }
     if (event.wheelDelta) {
       return event.wheelDelta > 0;
     }
@@ -39,6 +47,7 @@ function App() {
   }
 
   const manageScroll = throttle((event) => scroll(event));
+  const manageKeyScroll = debounce((event) => scroll(event));
 
   const handleScroll = useCallback(
     (e) => {
@@ -46,6 +55,14 @@ function App() {
       manageScroll(e);
     },
     [manageScroll]
+  );
+
+  const handleKeyScroll = useCallback(
+    (e) => {
+      e.preventDefault();
+      manageKeyScroll(e);
+    },
+    [manageKeyScroll]
   );
 
   useEffect(() => {
@@ -59,6 +76,7 @@ function App() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     };
+
     window.addEventListener('wheel', handleScroll, { passive: false });
     if (window.innerWidth <= 900) {
       window.removeEventListener('wheel', handleScroll);
@@ -71,8 +89,14 @@ function App() {
         window.addEventListener('wheel', handleScroll, { passive: false });
       }
     });
-    return () => window.removeEventListener('wheel', handleScroll);
-  }, [currentElement, handleScroll]);
+
+    window.addEventListener('keydown', handleKeyScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('keydown', handleKeyScroll);
+    };
+  }, [currentElement, handleKeyScroll, handleScroll]);
 
   return (
     <div className="app">
